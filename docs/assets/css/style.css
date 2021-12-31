@@ -124,10 +124,14 @@ table {
 
 /* end reset browser styles */
 
+html {
+    background-color: white;
+}
+
 body {
     padding: 0;
     margin: 0 auto;
-    max-width: 1200px;
+    max-width: 2000px;
     background-color: #3b3535;
 }
 
