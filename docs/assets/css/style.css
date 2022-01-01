@@ -131,7 +131,7 @@ html {
 body {
     padding: 0;
     margin: 0 auto;
-    max-width: 2000px;
+    max-width: 1280px;
     background-color: #3b3535;
 }
 
@@ -223,16 +223,16 @@ body {
 }
 
 .content h1 {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .content h2 {
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 .content p {
-    font-size: 1rem;
-    padding: 0 10px 10px 10px;
+    font-size: 1.5rem;
+    padding: 0px 10px 10px 10px;
 }
 
 p a {
@@ -241,14 +241,46 @@ p a {
     font-weight: bold;
 }
 
+.img-block {
+    align-items: center;
+    text-align: center;
+    margin: 10px auto;
+}
+
+figure figcaption {
+    font-size: 1rem;
+    font-style: italic;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.img-code-block {
+    align-items: left;
+    text-align: left;
+}
+
 .code {
-    font: 0.9rem 'Source Code Pro', Consolas, 'Courier New', Courier, monospace;
+    background: black;
+    border: 0.5px solid #888888;
+    margin: 10px 20px;
+    color: #ffffff;
+    background-size: 100%;
+    padding: 3% 0 1%;
+}
+
+.code-line-left {
+    text-align: left;
+    font: 1.2rem 'Source Code Pro', Consolas, 'Courier New', Courier, monospace;
+}
+
+.git-bash {
+    font: 1.2rem 'Source Code Pro', Consolas, 'Courier New', Courier, monospace;
     background: black url("../images/bash.svg") no-repeat;
     border: 0.5px solid #888888;
     margin: 10px 20px;
     color: #ffffff;
     background-size: 100%;
-    padding: 1.8rem 0 0.5rem;
+    padding: 3% 0 1%;
 }
 
 .inline-code {
@@ -283,13 +315,40 @@ p a {
     color: rgb(190, 190, 190);
 }
 
-.img-block {
-    align-items: center;
-    text-align: center;
-    margin: 10px auto;
+.pagination {
+    padding: 2px 10px 10px 10px;
+    margin: 30px 10px;
 }
 
-figure figcaption {
-    font-size: 0.7rem;
-    font-style: italic;
+.pagination ul {
+    list-style-type: none;
+}
+
+.pagination li {
+    min-width: 100px;
+    text-align:center;
+}
+
+.pagination ul li:first-of-type {
+    float: left;
+}
+
+.pagination a {
+    padding: 10px 20px;
+    font-size:1.2em;
+    text-decoration: none;
+    color: white;
+    background-color: green;
+    border: 1px solid green;
+    border-radius: 15px;
+}
+
+.pagination a:hover {
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: rgb(117, 0, 68);
+    border: 1px solid rgb(117, 0, 68);
+}
+.pagination ul li:last-of-type {
+    float: right;
 }

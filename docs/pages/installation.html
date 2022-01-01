@@ -40,7 +40,7 @@
             <p>In order to develop a django project, we will crate a virtual environement everytime we start a new project. Virtual environment is a tool by which you install your libraries without polluting your other environement.</p>
             <h3>Create Virtual Environement</h3>
             <p>Open <b>Git-bash</b> (or cmd or powershell) create a Python virtual environment as follows:</p>
-            <div class="code">
+            <div class="code git-bash">
                 <code class="bash">
                     <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~</span></div>
                     <div class="bash-line"><span clas="bash-prompt">$ </span><span>mkdir first_django_project</span></div>
@@ -59,7 +59,7 @@
             </figure>
             <h3>Activate Virtual Environment</h3>
             <p>After you creat the virtual envorinment, you need to activate it to install and import libraries. Inside the <span class="inline-code">.venv</span> directory there must be three folders: <span class="inline-code">Lib</span>, <span class="inline-code">Include</span>, and <span class="inline-code">Scripts</span> or <span class="inline-code">bin</span>. In order to activate virtual environement, type the following:</p>
-            <div class="code">
+            <div class="code git-bash">
                 <code class="bash">
                     <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
                     <div class="bash-line"><span clas="bash-prompt">$ </span><span>source .venv/Scripts/activate</span></div>
@@ -72,7 +72,7 @@
             <h2>Install Django</h2>
             <p>Now, that you have setup the virtual environment and activated it, its time to install django. When you install a library in virtual environment it will be install inside <span class="inline-code">.venv/Lib/site-packages</span> directory.</p>
             <p>To install django in your virtual environment write:</p>
-            <div class="code">
+            <div class="code git-bash">
                 <code class="bash">
                     <div class="bash-line"><span>(.venv)</span></div>
                     <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
@@ -80,7 +80,7 @@
                 </code>
             </div>
             <p>Afther installation is done, you can find the Django source code inside <span class="inline-code">.venv/Lib/site-packages/django</span> directory. Now, run the following to see the version of Django in your virtual envoironment:</p>
-            <div class="code">
+            <div class="code git-bash">
                 <code class="bash">
                     <div class="bash-line"><span>(.venv)</span></div>
                     <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
@@ -89,6 +89,42 @@
                 </code>
             </div>
             <p>For the version of Django is 4.0. What is the version of your Django?</p>.
+            <h2>Initialize Git</h2>
+            <p>In order to keep track our changes in codes will use Git. To initailize Git in this directory, execute <span class="inline-code">git init</span>. This commands will create <span class="inline-code">.git</span> directroy and setup git database to keep track of changes in your source code.</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span>(.venv)</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ git init</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">Initialized empty Git repository in C:/Users/javad/first_django_project/.git/</span></div>
+                </code>
+            </div>
+            <p>Now, wee need to add a <span class="inline-code">.gitignore</span> file in the directory to determine which kind of files or directories should not be tracked by Git. The virtual environement files should not be tracked since they are not part of our code, we just need to keep the information about version of libraries we have used in our source code. In order to do that, we use <span class="inline-code">pip freeze &gt requirements.txt</span>.</p>
+            <p>Next we create <span class="inline-code">.gitignore</span> file and add the files and directories which needs to be ignored by Git:</p>
+            <figure class="img-code-block">
+                <div class="code">
+                    <code>
+                        <p class="code-line-left">.venv/</p>
+                        <p class="code-line-left">__pycache__/</p>
+                        <p class="code-line-left">*.pyc</p>
+                    </code>
+                </div>
+                <figcaption>Fig.2 - Add these lines to <span class="inline-code">.gitignore</span> file.</figcaption>
+            </figure>
+            <p>Strcute of directories after these commands will look like this:</p>
+            <figure class="img-block">
+                <img width="60%" alt="directory structure (git)" src="assets/images/dir_git.svg">
+                <figcaption>Fig.3 - Directory structure after initializing git repo. The black boxes shows the content of each file. None that the content of your <span class="inline-code">requirements.txt</span> may be different than the one shown in this figure.</figcaption>
+            </figure>
+            <p>Congratulations! You have just finished installing django and initializing a Git repo for your project. In the next section, we are going to create our first django project.</p>
+            <div class="pagination">
+                <ul>
+                    
+                    <li><a href="index.html">prev</a></li>
+                    <li><a href="pages/hello_world.html">next</a></li>
+                </ul>
+            </div>
+            <p></p>
         </article>
     </body>
 </html>

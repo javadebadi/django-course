@@ -27,6 +27,16 @@
             </ul>
         </nav>
         <article class="content">
+             <h1>Start Django Project</h1>
+            <p>Now that we have install django in our virtual environement, it's time to start a django project. We are in <span class="inline-code">first_django_project</span> directory. We want to start a project in this directory. Let's start a project with the name of <span class="inline-code">my_site</span>.</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span>(.venv)</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ django-admin startproject my_site .</span></div>
+                </code>
+            </div>
+            <p>Note the <span class="inline-code">.</span> at the end of the command. This command tells the django to start a new project in current directory and call it <span class="inline-code">my_site</span>. After this commands you should have the following directories and files:</p>
             <h1>Templates</h1>
             <p>Django is a web framework. Thus, it needs a mechanism to generate HTML pages. HTML pages which django can generate have two parts:</p>
             <ol>
@@ -36,6 +46,13 @@
             <p>The mechanism which does this is called <strong>Template</strong>. A template has a special syntax which determines how dyanmic data must be inserted to HTML.</p>
             <h2>Rendering</h2>
             <p>In Django, we need to create an HTML string using a context data. <strong>Rendering</strong> is a action which fills the template with context data and returning the results as string.</p>
+            <div class="pagination">
+                <ul>  
+                    <li><a href="pages/installtion.html">prev</a></li>
+                    <li><a href=".">next</a></li>
+                </ul>
+            </div>
+            <p></p>
         </article>
     </body>
 </html>
