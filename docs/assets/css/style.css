@@ -336,7 +336,7 @@ figure figcaption {
 
 .pagination li {
     min-width: 100px;
-    text-align:center;
+    text-align: center;
 }
 
 .pagination ul li:first-of-type {
@@ -345,7 +345,7 @@ figure figcaption {
 
 .pagination a {
     padding: 10px 20px;
-    font-size:1.2em;
+    font-size: 1.2em;
     text-decoration: none;
     color: white;
     background-color: green;
@@ -359,6 +359,29 @@ figure figcaption {
     background-color: rgb(117, 0, 68);
     border: 1px solid rgb(117, 0, 68);
 }
+
 .pagination ul li:last-of-type {
     float: right;
+}
+
+
+.code.python {
+    background: black;
+    border: 0.5px solid #888888;
+    margin: 10px 20px;
+    color: #ffffff;
+    background-size: 100%;
+    padding: 1% 0 1%;
+}
+
+.python.import {
+    color: rgb(247, 0, 255);
+}
+
+.python.module {
+    color: rgb(75, 196, 163);
+}
+
+.python.module-function {
+    color: rgb(205, 179, 79);
 }
