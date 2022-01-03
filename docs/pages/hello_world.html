@@ -43,7 +43,52 @@
                 <img width="80%" alt="directory structure (main)" src="assets/images/dir_main.svg">
                 <figcaption>Fig.2 - Structure of directories after creating <span class="inline-code">main.py</span> file.</figcaption>
             </figure>            
-            <p>Note the <span class="inline-code">.</span> at the end of the command. This command tells the django to start a new project in current directory and call it <span class="inline-code">my_site</span>. After this commands you should have the following directories and files:</p>
+            <p>Now run the <span class="inline-code">main.py</span> and see what happens</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span>(.venv)</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ python main.py</span></div>
+                </code>
+            </div>
+            <p>If you have run the above you will see some errors are raised and the end of the errors you see this:</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span clas="bash-prompt">django.core.exceptions.ImproperlyConfigured: Requested setting LOGGING_CONFIG, but settings are not configured. You must either define the environment variable DJANGO_SETTINGS_MODULE or call settings.configure() before accessing settings.</span></div>
+                </code>
+            </div>
+            <p>This error simply says that in order to run Django you need to set some configurations. In addition, it suggests that you have two options to configure Django:</p>
+            <ol>
+                <li>Define an an environement variable <span class="inline-code">DJANGO_SETTINGS_MODULE</span></li>
+                <li>Call <span class="inline-code">settings.configure()</span></li>
+            </ol>
+            <p>First, we go with second option to see how it works. In order to configure settings we define a <span class="inline-code">Settings</span> in the <span class="inline-code">main.py</span> file.</p>
+            <figure class="img-code-block">
+                <div class="code python">
+                    <code>
+                        <p class="code-line-left"><span class="python import">import</span> <span class="python module">django</span></p>
+                        <p class="code-line-left"><span class="python import">from</span> <span class="python module">django.conf</span> <span class="python import">import</span> <span class="python module">settings</span></p>
+                        <p></p>
+                        <p></p>
+                        <p class="code-line-left"><span class="python python-class">class</span> <span class="python identifier">Settings</span>:</p>
+                        <p></p>
+                        <p class="code-line-left">&nbsp;&nbsp;&nbsp;&nbsp;<span class="python python-class-attribute">LOGGING</span> = <span class="python python-none">None</span></p>
+                        <p class="code-line-left">&nbsp;&nbsp;&nbsp;&nbsp;<span class="python python-class-attribute">LOGGING_CONFIG</span> = <span class="python python-none">None</span></p>
+                        <p class="code-line-left">&nbsp;&nbsp;&nbsp;&nbsp;<span class="python python-class-attribute">FORCE_SCRIPT_NAME</span> = <span class="python python-none">None</span></p>
+                        <p class="code-line-left">&nbsp;&nbsp;&nbsp;&nbsp;<span class="python python-class-attribute">INSTALLED_APPS</span> = []</p>
+                        <p class="code-line-left">&nbsp;&nbsp;&nbsp;&nbsp;<span class="python python-class-attribute">TEMPLATES</span> = []</p>
+                        <p></p>
+                        <p></p>
+                        <p class="code-line-left"><span class="python python-object">settings</span>.<span class="python object-method">configure</span>(<span class="python identifier">Settings</span>, <span class="python python-function-param">DEBUG</span>=<span class="python python-literal">True</span>)</span></p>
+                        <p class="code-line-left">
+                            <span class="python module">django</span>.<span class="python module-function">setup</span>()</p>
+                    </code>
+                </div>
+                <figcaption>Fig.3 - Create <span class="inline-code">main.py</span> file with these lines of codes.</figcaption>
+            </figure>
+            <p>Now run the <span class="inline-code">python main.py</span> and see that the program runs with no error.</p>
+
+
             <h1>Templates</h1>
             <p>Django is a web framework. Thus, it needs a mechanism to generate HTML pages. HTML pages which django can generate have two parts:</p>
             <ol>

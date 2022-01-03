@@ -378,10 +378,25 @@ figure figcaption {
     color: rgb(247, 0, 255);
 }
 
-.python.module {
+.python.module,
+.python.identifier {
     color: rgb(75, 196, 163);
 }
 
-.python.module-function {
+.python.module-function,
+.python.object-method {
     color: rgb(205, 179, 79);
 }
+
+.python.python-class-attribute,
+.python.python-object,
+.python.python-function-param {
+    color: rgb(129,196,249);
+}
+
+.python.python-class,
+.python.python-none,
+.python-literal {
+    color: rgb(65, 156, 200);
+}
+
