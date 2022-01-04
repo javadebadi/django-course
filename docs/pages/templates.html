@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Django Templates</title>
+        <base href="/django-course/">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="assets/css/style.css">
+    </head>
+    <body>
+        <nav class="sidebar">
+            <ul>
+                <li class="logo">
+                    <img src="assets/images/django_logo.png">
+                </li>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li>
+                    <a href="pages/installation.html">Installation</a>
+                </li>
+                <li>
+                    <a href="pages/django_settings.html">Django Settings</a>
+                </li>
+                <li>
+                    <a href="pages/templates.html" class="current">Templates</a>
+                </li>
+            </ul>
+        </nav>
+        <article class="content">
+            <h1>Templates</h1>
+            <p>Django is a web framework. Thus, it needs a mechanism to generate HTML pages. HTML pages which django can generate have two parts:</p>
+            <ol>
+                <li>Static part: parts in HTML pages which are fixed.</li>
+                <li>Dynamic part: parts in HTML pages which will be filled by data (Usually data which is pulled from database).</li>
+            </ol>
+            <p>The mechanism which does this is called <strong>Template</strong>. A template has a special syntax which determines how dyanmic data must be inserted to HTML.</p>
+            <h2>Rendering</h2>
+            <p>In Django, we need to create an HTML string using a context data. <strong>Rendering</strong> is an action which fills the template with context data and returning the results as string.</p>
+            <div class="pagination">
+                <ul>  
+                    <li><a href="pages/installtion.html">prev</a></li>
+                    <li><a href="pages/templates.html">next</a></li>
+                </ul>
+            </div>
+            <p></p>
+        </article>
+    </body>
+</html>

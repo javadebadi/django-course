@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
+        <title>Django Settings</title>
         <base href="/django-course/">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,13 +22,16 @@
                     <a href="pages/installation.html">Installation</a>
                 </li>
                 <li>
-                    <a href="pages/hello_world.html" class="current">Hello World</a>
+                    <a href="pages/django_settings.html">Django Settings</a>
+                </li>
+                <li>
+                    <a href="pages/templates.html" class="current">Templates</a>
                 </li>
             </ul>
         </nav>
         <article class="content">
              <h1>Django Settings</h1>
-            <p>Now that we have installed django in our virtual environement, it's time to start to develop codes with Django. We are in <span class="inline-code">first_django_project</span> directory and we have activated our virtual environment useing <span class="inline-code">source .venv/Scripts/activate</span>. Let's create <span class="inline-code">main.py</span> and import django there:</p>
+            <p>Now that we have installed django in our virtual environment, it's time to start to develop codes with Django. We are in <span class="inline-code">first_django_project</span> directory and we have activated our virtual environment useing <span class="inline-code">source .venv/Scripts/activate</span>. Let's create <span class="inline-code">main.py</span> and import django there:</p>
             <figure class="img-code-block">
                 <div class="code python">
                     <code>
@@ -59,7 +62,7 @@
             </div>
             <p>This error simply says that in order to run Django you need to set some configurations. In addition, it suggests that you have two options to configure Django:</p>
             <ol>
-                <li>Define an an environement variable <span class="inline-code">DJANGO_SETTINGS_MODULE</span></li>
+                <li>Define an environment variable <span class="inline-code">DJANGO_SETTINGS_MODULE</span></li>
                 <li>Call <span class="inline-code">settings.configure()</span></li>
             </ol>
             <p>First, we go with second option to see how it works. In order to configure settings we define a <span class="inline-code">Settings</span> in the <span class="inline-code">main.py</span> file.</p>
@@ -88,6 +91,75 @@
             </figure>
             <p>Now run the <span class="inline-code">python main.py</span> and see that the program runs with no error.</p>
 
+            <h2>Django Settings from Environment</h2>
+            <p>We knew how to use <span class="inline-code">settings.configure</span> to configure django. Now, we want to know how to configure django by defining an environment variable <span class="inline-code">DJANGO_SETTINGS_MODULE</span>. In practice, we usually go with this approach as you will see in future lessons.</p>
+            <p>To go with this approach, first create a new folder and name it <span class="inline-code">my_site</span>. Then open <span class="inline-code">my_site</span> directory and add <span class="inline-code">__init__.py</span> file in it. This file is added to make the <span class="inline-code">my_site</span> a python packge. At this moment the structure of directories is as follows:</p>
+            <div class="code git-bash">
+                <code class="bash">
+                    <div class="bash-line"><span>(.venv)</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ mkdir my_site</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ cd my_site</span></div>
+                    <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project/my_site</span></div>
+                    <div class="bash-line"><span clas="bash-prompt">$ touch __init__.py</span></div>
+                </code>
+            </div>
+            <figure class="img-block">
+                <img width="80%" alt="directory structure (main)" src="assets/images/dir_my_site.svg">
+                <figcaption>Fig.4 - Structure of directories after creating <span class="inline-code">my_site</span> package.</figcaption>
+            </figure>
+            <p>Then add <span class="inline-code">settings.py</span> inside <span class="inline-code">my_site</span> package with the following lines of codes:</p>
+            <figure class="img-code-block">
+                <div class="code python">
+                    <code>
+                        <p class="code-line-left"><span class="python python-class-attribute">LOGGING</span> = <span class="python python-none">None</span></p>
+                        <p class="code-line-left"><span class="python python-class-attribute">LOGGING_CONFIG</span> = <span class="python python-none">None</span></p>
+                        <p class="code-line-left"><span class="python python-class-attribute">FORCE_SCRIPT_NAME</span> = <span class="python python-none">None</span></p>
+                        <p class="code-line-left"><span class="python python-class-attribute">INSTALLED_APPS</span> = []</p>
+                        <p class="code-line-left"><span class="python python-class-attribute">TEMPLATES</span> = []</p>
+                    </code>
+                </div>
+                <figcaption>Fig.5 - Create <span class="inline-code">my_site/settings.py</span> file with these lines of codes.</figcaption>
+            </figure>
+            <p>Now, go to top directory (<span class="inline-code">first_django_project</span>) and edit the <span class="inline-code">main.py</span> as follows:</p>
+            <figure class="img-code-block">
+                <div class="code python">
+                    <code>
+                        <p class="code-line-left"><span class="python import">import</span> <span class="python module">os</span></p>
+                        <p class="code-line-left"><span class="python import">import</span> <span class="python module">django</span></p>
+                        <p></p>
+                        <p></p>
+                        <p><span class="python module">os</span>.<span class="python module-function">environ</span>.<span class="python module-function">set_default</span>(<span class="python python-string">"DJANGO_SETTINGS_MODULE"</span>, <span class="python python-string">"my_site.settings"</span>)</p>
+                        <p></p>
+                        <p class="code-line-left">
+                            <span class="python module">django</span>.<span class="python module-function">setup</span>()</p>
+                    </code>
+                </div>
+                <figcaption>Fig.6 - Edit <span class="inline-code">main.py</span> file with these lines of codes.</figcaption>
+            </figure>
+            <p>Now run the <span class="inline-code">python main.py</span> and see that the program runs with no error.</p>
+            <h2>Clean Directory</h2>
+            <p>In the next lesson, we are going to do something else an recreate the <span class="inline-code">my_site</span> directory. Therefore before starting the next lesson make sure to delete the <span class="inline-code">my_site</span> directory an all of its content. The directories sturcutre before starting the next lesson must look like this:</p>
+            <figure class="img-block">
+                <img width="80%" alt="directory structure (lesson2)" src="assets/images/dir_lesson_2_end.svg">
+                <figcaption>Fig.7 - Structure of directories at the end of this lessons.</figcaption>
+            </figure>
+            <h2>Summary</h2>
+            <p>In this lesson, you learnt:</p>
+            <ol>
+                <li>To use Django we need to configure some settings</li>
+                <li>There are two ways to configure django settings</li>
+            </ol>
+            <p>The method we used in this lesson to configure Django is not what you will do in practice. In the next lesson, we are going to start a django project which will automatically generate some default settings for us.</p>
+
+
+
+
+
+
+
+
+
 
             <h1>Templates</h1>
             <p>Django is a web framework. Thus, it needs a mechanism to generate HTML pages. HTML pages which django can generate have two parts:</p>
@@ -97,11 +169,11 @@
             </ol>
             <p>The mechanism which does this is called <strong>Template</strong>. A template has a special syntax which determines how dyanmic data must be inserted to HTML.</p>
             <h2>Rendering</h2>
-            <p>In Django, we need to create an HTML string using a context data. <strong>Rendering</strong> is a action which fills the template with context data and returning the results as string.</p>
+            <p>In Django, we need to create an HTML string using a context data. <strong>Rendering</strong> is an action which fills the template with context data and returning the results as string.</p>
             <div class="pagination">
                 <ul>  
                     <li><a href="pages/installtion.html">prev</a></li>
-                    <li><a href=".">next</a></li>
+                    <li><a href="pages/templates.html">next</a></li>
                 </ul>
             </div>
             <p></p>

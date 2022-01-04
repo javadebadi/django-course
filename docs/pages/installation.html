@@ -22,24 +22,27 @@
                     <a href="pages/installation.html" class="current">Installation</a>
                 </li>
                 <li>
-                    <a href="pages/hello_world.html">Hello World</a>
+                    <a href="pages/django_settings.html">Django Settings</a>
                 </li>
+                <li>
+                    <a href="pages/templates.html" class="current">Templates</a>
+                </li>              
             </ul>
         </nav>
         <article class="content">
             <h1>Installation</h1>
             <p>In this section, you will find information about what you need to do before starting to develop codes with Django.</p>
             <h2>Install Python</h2>
-            <p>Django is web framework written In Python. Therefore, the first thing you need to do is install Python in your system. In order to install Python, click <a href="https://www.python.org/downloads/">here</a> and use website guidelines to install Python in your system. Make sure to add the Python in your system path during Installation (there is a checkbox which you need to mark it to add the Python to system paths). In addition, make sure to install <b>pip</b> too during Python installation.</p>
+            <p>Django is a web framework written In Python. Therefore, the first thing you need to do is to install Python in your system. In order to install Python, click <a href="https://www.python.org/downloads/">here</a> and use website guidelines to install Python in your system. Make sure to add the Python in your system path during Installation (there is a checkbox which you need to mark it to add the Python to system paths). In addition, make sure to install <b>pip</b> during Python installation.</p>
             <h2>Install Git (Git-Bash)</h2>
             <p>You need command line tools to work with Python and Django. We will use bash as our shell language. In addition, you need to install Git in your system. Visit <a href="https://git-scm.com/">here</a> to install Git in Linux or Git-bash if you are a Windows OS user.</p>
             <p>In these tutorials we use Windows OS and git-bash. However, the commands are similar in all Operating Systems.</p>
             <h2>Install Text Editor</h2>
-            <p>We will used <a href="https://code.visualstudio.com/">VS Code</a> to develop our codes. VS code is a free open source text editor which is available in all Operating Systems. It has many extension to develop Python, HTML, CSS and etc. In addition, it has integration terminal and you can access to git-bash or other terminal wihtout leaving the editor environement.</p>
-            <h2>Virtual Environement</h2>
-            <p>In order to develop a django project, we will crate a virtual environement everytime we start a new project. Virtual environment is a tool by which you install your libraries without polluting your other environement.</p>
-            <h3>Create Virtual Environement</h3>
-            <p>Open <b>Git-bash</b> (or cmd or powershell) create a Python virtual environment as follows:</p>
+            <p>We will used <a href="https://code.visualstudio.com/">VS Code</a> to develop our codes. VS code is a free open source text editor which is available in all Operating Systems. It has many extensions to develop Python, HTML, CSS and etc. In addition, it has an integrated terminal and you can access to git-bash or other terminal wihtout leaving the editor environment.</p>
+            <h2>Virtual environment</h2>
+            <p>In order to develop a django project, we will create a virtual environment everytime we start a new project. Virtual environment is a tool by which you install your libraries without polluting your other environment.</p>
+            <h3>Create Virtual environment</h3>
+            <p>Open <b>Git-bash</b> (or cmd or powershell) to create a Python virtual environment as follows:</p>
             <div class="code git-bash">
                 <code class="bash">
                     <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~</span></div>
@@ -52,13 +55,13 @@
                     <div class="bash-line"><span clas="bash-prompt">$ </span><span>python -m venv .venv</span></div>
                 </code>
             </div>
-            <p>The first line generates a directory named <span class="inline-code">first_django_project</span>. Then, we open this directory. Inside the directory, we run <span class="inline-code">python -m venv .venv</span> which creates the virtual environement in a directory named <span class="inline-code">.venv</span>. The structure of directories are show in image below:</p>
+            <p>The first line generates a directory named <span class="inline-code">first_django_project</span>. Then, we open this directory. Inside the directory, we run <span class="inline-code">python -m venv .venv</span> which creates the virtual environment in a directory named <span class="inline-code">.venv</span>. The structure of directories is shown in the below image:</p>
             <figure class="img-block">
                 <img width="40%" alt="directory structure" src="assets/images/dir_venv.svg">
                 <figcaption>Fig.1 - Directory structure after creating virtual environment.</figcaption>
             </figure>
             <h3>Activate Virtual Environment</h3>
-            <p>After you creat the virtual envorinment, you need to activate it to install and import libraries. Inside the <span class="inline-code">.venv</span> directory there must be three folders: <span class="inline-code">Lib</span>, <span class="inline-code">Include</span>, and <span class="inline-code">Scripts</span> or <span class="inline-code">bin</span>. In order to activate virtual environement, type the following:</p>
+            <p>After you create the virtual envorinment, you need to activate it to install and import libraries. Inside the <span class="inline-code">.venv</span> directory, there must be three folders: <span class="inline-code">Lib</span>, <span class="inline-code">Include</span>, and <span class="inline-code">Scripts</span> or <span class="inline-code">bin</span>. In order to activate virtual environment, type the following:</p>
             <div class="code git-bash">
                 <code class="bash">
                     <div class="bash-line"><span class="bash-ps1">javad@DESKTOP-2GOSU3N</span><span class="bash-ps2"> MINGW64</span><span class="bash-pwd"> ~/first_django_project</span></div>
@@ -68,9 +71,9 @@
                     <div class="bash-line"><span clas="bash-prompt">$ </span></div>
                 </code>
             </div>
-            <p>The first line in above code activates the virtual environment. After that, you mush see the <span class="inline-code">(.venv)</span> above all prompt lines in the git-bash terminal.</p>
+            <p>The first line in above code activates the virtual environment. After that, you must see the <span class="inline-code">(.venv)</span> above all prompt lines in the git-bash terminal.</p>
             <h2>Install Django</h2>
-            <p>Now, that you have setup the virtual environment and activated it, its time to install django. When you install a library in virtual environment it will be install inside <span class="inline-code">.venv/Lib/site-packages</span> directory.</p>
+            <p>Now, that you have setup the virtual environment and activated it, it's time to install django. When you install a library in virtual environment it will be installed inside <span class="inline-code">.venv/Lib/site-packages</span> directory.</p>
             <p>To install django in your virtual environment write:</p>
             <div class="code git-bash">
                 <code class="bash">
@@ -99,7 +102,7 @@
                     <div class="bash-line"><span clas="bash-prompt">Initialized empty Git repository in C:/Users/javad/first_django_project/.git/</span></div>
                 </code>
             </div>
-            <p>Now, wee need to add a <span class="inline-code">.gitignore</span> file in the directory to determine which kind of files or directories should not be tracked by Git. The virtual environement files should not be tracked since they are not part of our code, we just need to keep the information about version of libraries we have used in our source code. In order to do that, we use <span class="inline-code">pip freeze &gt requirements.txt</span>.</p>
+            <p>Now, wee need to add a <span class="inline-code">.gitignore</span> file in the directory to determine which kind of files or directories should not be tracked by Git. The virtual environment files should not be tracked since they are not part of our code, we just need to keep the information about version of libraries we have used in our source code. In order to do that, we use <span class="inline-code">pip freeze &gt requirements.txt</span>.</p>
             <p>Next we create <span class="inline-code">.gitignore</span> file and add the files and directories which needs to be ignored by Git:</p>
             <figure class="img-code-block">
                 <div class="code">
@@ -130,7 +133,7 @@
                 <ul>
                     
                     <li><a href="index.html">prev</a></li>
-                    <li><a href="pages/hello_world.html">next</a></li>
+                    <li><a href="pages/django_settings.html">next</a></li>
                 </ul>
             </div>
             <p></p>
