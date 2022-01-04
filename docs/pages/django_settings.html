@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Django Settings</title>
-        <base href="/django-course/">
+        <base href="/docs/">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="assets/css/style.css">
@@ -129,7 +129,7 @@
                         <p class="code-line-left"><span class="python import">import</span> <span class="python module">django</span></p>
                         <p></p>
                         <p></p>
-                        <p><span class="python module">os</span>.<span class="python module-function">environ</span>.<span class="python module-function">set_default</span>(<span class="python python-string">"DJANGO_SETTINGS_MODULE"</span>, <span class="python python-string">"my_site.settings"</span>)</p>
+                        <p><span class="python module">os</span>.<span class="python module-function">environ</span>.<span class="python module-function">setdefault</span>(<span class="python python-string">"DJANGO_SETTINGS_MODULE"</span>, <span class="python python-string">"my_site.settings"</span>)</p>
                         <p></p>
                         <p class="code-line-left">
                             <span class="python module">django</span>.<span class="python module-function">setup</span>()</p>
@@ -151,31 +151,6 @@
                 <li>There are two ways to configure django settings</li>
             </ol>
             <p>The method we used in this lesson to configure Django is not what you will do in practice. In the next lesson, we are going to start a django project which will automatically generate some default settings for us.</p>
-
-
-
-
-
-
-
-
-
-
-            <h1>Templates</h1>
-            <p>Django is a web framework. Thus, it needs a mechanism to generate HTML pages. HTML pages which django can generate have two parts:</p>
-            <ol>
-                <li>Static part: parts in HTML pages which are fixed.</li>
-                <li>Dynamic part: parts in HTML pages which will be filled by data (Usually data which is pulled from database).</li>
-            </ol>
-            <p>The mechanism which does this is called <strong>Template</strong>. A template has a special syntax which determines how dyanmic data must be inserted to HTML.</p>
-            <h2>Rendering</h2>
-            <p>In Django, we need to create an HTML string using a context data. <strong>Rendering</strong> is an action which fills the template with context data and returning the results as string.</p>
-            <div class="pagination">
-                <ul>  
-                    <li><a href="pages/installtion.html">prev</a></li>
-                    <li><a href="pages/templates.html">next</a></li>
-                </ul>
-            </div>
             <p></p>
         </article>
     </body>
