@@ -269,6 +269,10 @@ figure figcaption {
     text-align: left;
 }
 
+.youtube-video {
+    text-align: center;
+}
+
 .code {
     background: black;
     border: 0.5px solid #888888;
